@@ -1,0 +1,32 @@
+[project]
+name = "devbook-backend"
+version = "0.1.0"
+description = "DevBook AI backend: ingestion, retrieval, chat streaming, notes and code runner"
+requires-python = ">=3.12"
+license = "MIT"
+dependencies = [
+  "fastapi",
+  "uvicorn[standard]",
+  "python-multipart",
+  "docling>=2.95,<3",
+  "chromadb>=1.5,<2",
+  "ollama",
+  "httpx",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "reportlab"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["app"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+  "slow: runs real Docling parsing",
+  "docker: needs a running Docker daemon",
+]
