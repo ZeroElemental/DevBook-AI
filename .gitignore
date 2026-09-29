@@ -1,0 +1,28 @@
+# Runtime data (books, index, notes, database)
+data/
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+
+# Environment
+.env*
+!.env.example
+
+# Partial uploads and temp files
+*.part
+*.tmp
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
